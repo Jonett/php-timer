@@ -6,15 +6,20 @@ Utility class for timing things, factored out of PHPUnit into a stand-alone comp
 
 You can add this library as a local, per-project dependency to your project using [Composer](https://getcomposer.org/):
 
-```
-composer require phpunit/php-timer
+```json
+{
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/Jonett/php-timer.git"
+        }
+    ],
+    "require": {
+        "jonett/php-timer": "^5.0"
+    }
+}
 ```
 
-If you only need this library during development, for instance to run your project's test suite, then you should add it as a development-time dependency:
-
-```
-composer require --dev phpunit/php-timer
-```
 
 ## Usage
 
