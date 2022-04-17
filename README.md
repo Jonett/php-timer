@@ -1,8 +1,5 @@
 # phpunit/php-timer
 
-[![CI Status](https://github.com/sebastianbergmann/php-timer/workflows/CI/badge.svg)](https://github.com/sebastianbergmann/php-timer/actions)
-[![Type Coverage](https://shepherd.dev/github/sebastianbergmann/php-timer/coverage.svg)](https://shepherd.dev/github/sebastianbergmann/php-timer)
-
 Utility class for timing things, factored out of PHPUnit into a stand-alone component.
 
 ## Installation
@@ -24,7 +21,6 @@ composer require --dev phpunit/php-timer
 ### Basic Timing
 
 ```php
-require __DIR__ . '/vendor/autoload.php';
 
 use SebastianBergmann\Timer\Timer;
 
@@ -53,49 +49,4 @@ float(0.002851062)
 float(2.851062)
 float(2851.062)
 int(2851062)
-```
-
-### Resource Consumption
-
-#### Explicit duration
-
-```php
-require __DIR__ . '/vendor/autoload.php';
-
-use SebastianBergmann\Timer\ResourceUsageFormatter;
-use SebastianBergmann\Timer\Timer;
-
-$timer = (new Timer())->start();
-
-foreach (\range(0, 100000) as $i) {
-    // ...
-}
-
-print (new ResourceUsageFormatter)->resourceUsage($timer->stop());
-```
-
-The code above yields the output below:
-
-```
-Time: 00:00.002, Memory: 6.00 MB
-```
-
-#### Duration since PHP Startup (using unreliable `$_SERVER['REQUEST_TIME_FLOAT']`)
-
-```php
-require __DIR__ . '/vendor/autoload.php';
-
-use SebastianBergmann\Timer\ResourceUsageFormatter;
-
-foreach (\range(0, 100000) as $i) {
-    // ...
-}
-
-print (new ResourceUsageFormatter)->resourceUsageSinceStartOfRequest();
-```
-
-The code above yields the output below:
-
-```
-Time: 00:00.002, Memory: 6.00 MB
 ```
