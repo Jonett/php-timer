@@ -1,5 +1,5 @@
 {
-    "name": "phpunit/php-timer",
+    "name": "jonett/php-timer",
     "description": "Utility class for timing",
     "type": "library",
     "keywords": [
