@@ -19,9 +19,10 @@ final class Timer
      */
     private array $startTimes = [];
 
-    public function start(): void
+    public function start(): Timer
     {
         $this->startTimes[] = (float) hrtime(true);
+        return $this;
     }
 
     /**
