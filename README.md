@@ -15,7 +15,7 @@ You can add this library as a local, per-project dependency to your project usin
         }
     ],
     "require": {
-        "jonett/php-timer": "^5.0"
+        "jonett/php-timer": "dev-main"
     }
 }
 ```
